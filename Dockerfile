@@ -4,8 +4,8 @@ RUN mkdir /app
 
 WORKDIR /app
 
-COPY /build/libs/eureka-*.jar /app/eureka.jar
+COPY /target/eureka-*.jar /app/eureka.jar
 
-EXPOSE 8080
+EXPOSE 8761
 ENV JAVA_TOOL_OPTIONS -Dfile.encoding=UTF8 -Duser.country=BR -Duser.language=pt -Duser.timezone=America/Sao_Paulo
 CMD ["java", "-jar", "-Xmx512M", "-Xms256M","-XX:MaxMetaspaceSize=256m", "eureka.jar"]
